@@ -57,6 +57,12 @@
       Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
       utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
       mode émulateur dans les outils de développement de votre navigateur.
+      Comment faire
+      <a
+        href="https://piedweb.com/afficher-version-mobile"
+        class="text-blue-600 underline"
+        >ici</a
+      >
     </div>
 
     <!-- MENU BURGER -->
@@ -97,9 +103,13 @@
 
     <script>
       //  REMOVE BEFORE PROD
-      if (navigator.userAgent.includes("Windows")) {
-        document.getElementById("pc-warning").style.display = "block";
-      }
+      setInterval(() => {
+        if (navigator.userAgent.includes("Windows")) {
+          document.getElementById("pc-warning").style.display = "block";
+        } else {
+          document.getElementById("pc-warning").style.display = "none";
+        }
+      }, 30);
     </script>
   </body>
 </html>
