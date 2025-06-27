@@ -47,6 +47,8 @@
         <span class="burger-line"></span>
       </button>
     </nav>
+
+    <!-- REMOVE BEFORE PROD -->
     <div
       id="pc-warning"
       style="display: none"
@@ -94,7 +96,7 @@
     </main>
 
     <script>
-      // Affiche un warning si l'utilisateur est sur PC (Windows)
+      //  REMOVE BEFORE PROD
       if (navigator.userAgent.includes("Windows")) {
         document.getElementById("pc-warning").style.display = "block";
       }
