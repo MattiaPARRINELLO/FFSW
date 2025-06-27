@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FFSW - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- A éviter en prod, penser a passer sur une version en build avec npm etc. Voir fin développement  -->
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Pour l'effet frosted glass sur tous les navigateurs */
+      .frosted {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      @font-face {
+        font-family: "Open Sans";
+        src: url("assets/fonts/open sans italic.ttf") format("truetype");
+        font-weight: normal;
+        font-style: italic;
+      }
+
+      :root {
+        --custom-font: "CustomFont", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200 open-sans">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 frosted bg-white/30 shadow-md px-4 py-3 flex items-center justify-between m0"
+    >
+      <img src="assets/ffsw logo.png" alt="Logo" class="h-10" />
+
+      <!-- Bouton burger -->
+      <button
+        id="menu-toggle"
+        class="relative w-6 h-6 flex flex-col justify-between items-center focus:outline-none"
+      >
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </nav>
+
+    <!-- MENU BURGER -->
+    <div
+      id="mobile-menu"
+      class="fixed top-14 right-4 left-4 bg-white/40 frosted rounded-xl p-4 shadow-xl transform transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none"
+    >
+      <ul class="space-y-3 text-center">
+        <li>
+          <a href="#" class="block font-medium hover:text-blue-600">Accueil</a>
+        </li>
+        <li>
+          <a href="#" class="block font-medium hover:text-blue-600">À propos</a>
+        </li>
+        <li>
+          <a href="#" class="block font-medium hover:text-blue-600">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- CONTENU -->
+    <main>
+      <section
+        class="pt-20 p-4 bg-cover bg-top w-screen flex items-top justify-between"
+        style="
+          background-image: url('assets/img/front.jpg');
+          height: calc(100vh + 170px);
+        "
+      >
+        <h1
+          class="mt-10 text-3xl font-black italic text-center tracking-wide"
+          style="font-family: 'Open Sans', sans-serif; color: #1c2645"
+        >
+          BIENVENUE À LA FÉDÉRATION DE STREET WORKOUT FREESTYLE
+        </h1>
+      </section>
+    </main>
+  </body>
+</html>
