@@ -28,7 +28,10 @@
     </style>
   </head>
   <body class="bg-gray-200 open-sans">
+    <!-- WARNING PC -->
+
     <!-- NAVBAR -->
+
     <nav
       class="fixed top-0 left-0 right-0 z-50 frosted bg-white/30 shadow-md px-4 py-3 flex items-center justify-between m0"
     >
@@ -44,6 +47,15 @@
         <span class="burger-line"></span>
       </button>
     </nav>
+    <div
+      id="pc-warning"
+      style="display: none"
+      class="fixed top-0 left-0 right-0 z-50 bg-yellow-300 text-black text-center p-20 font-semibold shadow-lg"
+    >
+      Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
+      utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
+      mode émulateur dans les outils de développement de votre navigateur.
+    </div>
 
     <!-- MENU BURGER -->
     <div
@@ -80,5 +92,12 @@
         </h1>
       </section>
     </main>
+
+    <script>
+      // Affiche un warning si l'utilisateur est sur PC (Windows)
+      if (navigator.userAgent.includes("Windows")) {
+        document.getElementById("pc-warning").style.display = "block";
+      }
+    </script>
   </body>
 </html>
