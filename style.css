@@ -19,3 +19,345 @@
   transform: rotate(-45deg) translate(2px, -2px);
   transform-origin: left;
 }
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/open sans italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+:root {
+  --custom-font: "CustomFont", sans-serif;
+}
+
+body {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.frosted {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11150;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  height: 2.5rem;
+}
+
+#menu-toggle {
+  position: relative;
+  width: 2rem;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#pc-warning {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: #facc15; /* yellow-300 */
+  color: black;
+  text-align: center;
+  padding: 5rem;
+  font-weight: 600;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu {
+  position: fixed;
+  top: 3.5rem;
+  left: 1rem;
+  right: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
+
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#mobile-menu.active {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.rounded-corners {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  overflow: hidden;
+}
+
+#mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#mobile-menu li {
+  margin-bottom: 0.75rem;
+}
+
+#mobile-menu a {
+  display: block;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+#mobile-menu a:hover {
+  color: #2563eb; /* blue-600 */
+}
+
+main .home-page {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem; /* espace sous le bouton */
+  background-size: cover;
+  background-position: top;
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("assets/img/front.jpg");
+}
+
+main .benefices-fede {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+main .events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+main .events h2 {
+  text-align: center;
+  color: #1c2645;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+
+main .event-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 95vw;
+  aspect-ratio: 10/13;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+main .event-card .info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 93%;
+  background-color: white;
+  margin: 1rem;
+  padding: 0 10px;
+}
+
+main .event-card .info-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+main .event-card .locationNdate {
+  /* background-color: orange; */
+}
+
+main .event-card .info-container div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+main .event-card .inscription {
+  /* background-color: yellow; */
+}
+
+main .info-container .inscription p {
+  font-size: 0.7rem;
+  color: #1c2645;
+  opacity: 0.5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 25%;
+}
+
+.info-container .inscription .countdown {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+main .event-card .info-container .inscription .countdown div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(28, 38, 69, 0.5);
+  aspect-ratio: 2/1;
+  width: 25%;
+}
+
+main .event-card .locationNdate p {
+  margin: 0 0;
+}
+
+main .event-card .location {
+  font-size: 1rem;
+  color: #d90d2e;
+}
+
+main .event-card .date {
+  font-size: 1rem;
+  color: #1c2645;
+  font-weight: 600;
+}
+
+main .event-card .info-card .event-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1c2645;
+  margin-bottom: 0.5rem;
+}
+
+main .benefices-fede img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+main .benefices-fede div {
+  text-align: center;
+  background-color: #1c2645;
+  color: white;
+  padding: 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 2rem;
+  letter-spacing: 3px;
+  font-style: italic;
+  line-height: 2rem;
+}
+
+main .benefices-fede button {
+  margin-top: 1rem;
+  color: #1c2645;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main .benefices-fede p {
+  text-align: justify;
+  line-height: 26px;
+  font-size: 16px;
+}
+main h1 {
+  margin-top: 2.5rem;
+  font-size: 1.875rem;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #1c2645;
+}
+
+main button {
+  margin-top: auto; /* pousse le bouton vers le bas */
+  color: white;
+  background-color: #d90d2e;
+  box-shadow: 0 5px 15px rgba(217, 13, 46, 0.5);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.burger-line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+#menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(2px, 2px);
+  transform-origin: left;
+}
+#menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(2px, -2px);
+  transform-origin: left;
+}

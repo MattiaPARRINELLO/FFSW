@@ -4,100 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FFSW - Accueil</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- A éviter en prod, penser a passer sur une version en build avec npm etc. Voir fin développement  -->
-
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Pour l'effet frosted glass sur tous les navigateurs */
-      .frosted {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-      @font-face {
-        font-family: "Open Sans";
-        src: url("assets/fonts/open sans italic.ttf") format("truetype");
-        font-weight: normal;
-        font-style: italic;
-      }
-
-      :root {
-        --custom-font: "CustomFont", sans-serif;
-      }
-    </style>
+    <script src="script.js" defer></script>
   </head>
-  <body class="bg-gray-200 open-sans">
-    <!-- WARNING PC -->
-
+  <body>
     <!-- NAVBAR -->
-
-    <nav
-      class="fixed top-0 left-0 right-0 z-50 frosted bg-white/30 shadow-md px-4 py-3 flex items-center justify-between m0"
-    >
-      <img src="assets/ffsw logo.png" alt="Logo" class="h-10" />
-
-      <!-- Bouton burger -->
-      <button
-        id="menu-toggle"
-        class="relative w-6 h-6 flex flex-col justify-between items-center focus:outline-none"
-      >
+    <nav class="frosted">
+      <img src="assets/ffsw logo.png" alt="Logo" />
+      <button id="menu-toggle">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
         <span class="burger-line"></span>
       </button>
     </nav>
 
-    <!-- REMOVE BEFORE PROD -->
-    <div
-      id="pc-warning"
-      style="display: none"
-      class="fixed top-0 left-0 right-0 z-50 bg-yellow-300 text-black text-center p-20 font-semibold shadow-lg"
-    >
+    <!-- WARNING -->
+    <div id="pc-warning">
       Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
       utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
       mode émulateur dans les outils de développement de votre navigateur.
       Comment faire
-      <a
-        href="https://piedweb.com/afficher-version-mobile"
-        class="text-blue-600 underline"
+      <a href="https://piedweb.com/afficher-version-mobile" class="underline"
         >ici</a
       >
     </div>
 
     <!-- MENU BURGER -->
-    <div
-      id="mobile-menu"
-      class="fixed top-14 right-4 left-4 bg-white/40 frosted rounded-xl p-4 shadow-xl transform transition-all duration-300 ease-in-out opacity-0 scale-95 pointer-events-none"
-    >
-      <ul class="space-y-3 text-center">
-        <li>
-          <a href="#" class="block font-medium hover:text-blue-600">Accueil</a>
-        </li>
-        <li>
-          <a href="#" class="block font-medium hover:text-blue-600">À propos</a>
-        </li>
-        <li>
-          <a href="#" class="block font-medium hover:text-blue-600">Contact</a>
-        </li>
+    <div id="mobile-menu">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
 
     <!-- CONTENU -->
     <main>
-      <section
-        class="pt-20 p-4 bg-cover bg-top w-screen flex items-top justify-between"
-        style="
-          background-image: url('assets/img/front.jpg');
-          height: calc(100vh + 170px);
-        "
-      >
-        <h1
-          class="mt-10 text-3xl font-black italic text-center tracking-wide"
-          style="font-family: 'Open Sans', sans-serif; color: #1c2645"
+      <section class="rounded-corners home-page">
+        <h1>BIENVENUE À LA FÉDÉRATION DE STREET WORKOUT FREESTYLE</h1>
+        <button>En savoir plus</button>
+      </section>
+      <section class="benefices-fede">
+        <img
+          class="rounded-corners"
+          src="assets/img/elbow-lever.png"
+          alt="Elbow Lever"
+        />
+        <div class="rounded-corners">
+          <h2>DÉCOUVREZ<br />LES BÉNÉFICES <br />DE LA FÉDÉRATION</h2>
+          <p>
+            La Fédération Française de Street Workout Freestyle offre un soutien
+            inégalé aux athlètes et aux comités régionaux. Profitez d'une
+            plateforme dédiée pour gérer vos compétitions et suivre vos
+            performances.
+          </p>
+          <button>En savoir plus</button>
+        </div>
+      </section>
+      <section class="events">
+        <h2 style="font-weight: 900">DÉCOUVREZ NOS ÉVÉNEMENTS</h2>
+        <div
+          class="event-card rounded-corners"
+          style="background-image: url('assets/img/event.png')"
         >
-          BIENVENUE À LA FÉDÉRATION DE STREET WORKOUT FREESTYLE
-        </h1>
+          <div class="info-card rounded-corners">
+            <!-- Info event -->
+            <div><h3 class="event-title">Championnat National</h3></div>
+            <div class="info-container">
+              <!-- Date, lieu et inscription -->
+              <div class="locationNdate">
+                <p class="location">Paris</p>
+                <p class="date">10 Décembre 2023</p>
+              </div>
+              <div class="inscription"">
+              <p>Fermeture inscription</p>
+              <div class="countdown">
+                <!-- <div> -->
+                <div class="rounded-corners"><span>12</span>j</div>
+                <!-- </div> -->
+                <!-- <div> -->
+                <div class="rounded-corners"><span>22</span>h</div>
+                <!-- </div> -->
+                <!-- <div> -->
+                <div class="rounded-corners"><span>55</span>m</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
