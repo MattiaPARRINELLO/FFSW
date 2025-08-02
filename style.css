@@ -20,22 +20,14 @@
   transform-origin: left;
 }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("assets/fonts/open sans italic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-:root {
-  --custom-font: "CustomFont", sans-serif;
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-  background-color: #e5e7eb; /* bg-gray-200 */
-  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff; /* bg-gray-200 */
   margin: 0;
-  padding: 0;
+  padding: 0;fff
 }
 
 .frosted {
@@ -170,6 +162,7 @@ main .events {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  padding-bottom: 70px;
 }
 
 main .events h2 {
@@ -199,8 +192,8 @@ main .event-card .info-card {
   justify-content: center;
   width: 93%;
   background-color: white;
-  margin: 1rem;
-  padding: 0 10px;
+  margin: 0 1rem 1rem 1rem;
+  padding: 5px 10px 20px 10px;
 }
 
 main .event-card .info-container {
@@ -240,6 +233,7 @@ main .info-container .inscription p {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 0.3rem;
 }
 
 main .event-card .info-container .inscription .countdown div {
@@ -247,9 +241,26 @@ main .event-card .info-container .inscription .countdown div {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(28, 38, 69, 0.5);
+  background-color: #ffffff;
+  border-radius: 0.5rem;
   aspect-ratio: 2/1;
-  width: 25%;
+  width: 30%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 0.1rem;
+}
+
+main .event-card .info-container .inscription .countdown div span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #d90d2e;
+  line-height: 1;
+}
+
+main .event-card .info-container .inscription .countdown div::after {
+  content: attr(data-unit);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #666666;
 }
 
 main .event-card .locationNdate p {
@@ -360,4 +371,159 @@ main button {
 #menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(2px, -2px);
   transform-origin: left;
+}
+
+.whoweare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 1.5rem;
+  background-color: #0f131f;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.whoweare h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.whoweare h6 {
+  opacity: 50%;
+  font-weight: 100;
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.whoweare .paragraph {
+  max-width: 350px;
+  margin-bottom: 2rem;
+}
+
+.whoweare .paragraph p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.whoweare .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.whoweare .buttons button {
+  background-color: #ffffff;
+  color: #1c2645;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.whoweare .buttons button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Section Contact */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #ffff;
+  min-height: 100vh;
+}
+
+.contact h2 {
+  color: #1c2645;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: #e8e8e8;
+  border-radius: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #1c2645;
+  box-sizing: border-box;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #666666;
+  font-weight: 500;
+  opacity: 1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #dcdcdc;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.contact-form button {
+  background-color: #d90d2e;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(217, 13, 46, 0.3);
+}
+
+.contact-form button:hover {
+  background-color: #b80a26;
+  box-shadow: 0 6px 20px rgba(217, 13, 46, 0.4);
 }

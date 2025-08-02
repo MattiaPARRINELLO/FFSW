@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FFSW - Accueil</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -76,22 +85,53 @@
                 <p class="location">Paris</p>
                 <p class="date">10 Décembre 2023</p>
               </div>
-              <div class="inscription"">
-              <p>Fermeture inscription</p>
+              <div class="inscription">
+              <p>Fermeture des inscriptions</p>
               <div class="countdown">
-                <!-- <div> -->
-                <div class="rounded-corners"><span>12</span>j</div>
-                <!-- </div> -->
-                <!-- <div> -->
-                <div class="rounded-corners"><span>22</span>h</div>
-                <!-- </div> -->
-                <!-- <div> -->
-                <div class="rounded-corners"><span>55</span>m</div>
+                <div class="rounded-corners" data-unit="j"><span>12</span></div>
+                <div class="rounded-corners" data-unit="h"><span>22</span></div>
+                <div class="rounded-corners" data-unit="m"><span>55</span></div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <section class="whoweare">
+        <h6>Par des athlètes, <br />pour des athlètes</h6>
+        <h2>QUI SOMMES-NOUS ?</h2>
+        <div class="paragraph">
+          <p>
+            La Fédération Française de Street Workout Freestyle (FFSWF) est
+            l’instance nationale dédiée à la promotion et au développement du
+            street workout freestyle en France. Nous rassemblons et soutenons
+            une communauté d’athlètes passionnés, tout en structurant la
+            pratique à travers des compétitions, des événements et des
+            programmes de formation.
+          </p>
+          <p>
+            Notre mission : faire rayonner le street workout freestyle et
+            encourager une pratique sportive accessible à tous, alliant force,
+            créativité et expression personnelle.
+          </p>
+        </div>
+        <div class="buttons">
+          <button class="rounded-corners">Nos partenaires</button>
+          <button class="rounded-corners">Les membres</button>
+        </div>
+      </section>
+      <section class="contact">
+        <h2>CONTACTEZ-NOUS</h2>
+        <form class="contact-form rounded-corners">
+          <input type="text" id="name" name="name" required placeholder="Nom et Prénom" />
+
+          <input type="email" id="email" name="email" required placeholder="Email" />
+
+          <input type="tel" id="phone" name="phone" required placeholder="Téléphone" />
+
+          <textarea id="message" name="message" rows="4" required placeholder="Message"></textarea>
+
+          <button type="submit" class="rounded-corners">Envoyer</button>
+        </form>
     </main>
 
     <script>
