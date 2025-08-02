@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FFSW - Partenaires</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="frosted">
+      <img src="../../assets/ffsw logo.png" alt="Logo" />
+      <button id="menu-toggle">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </nav>
+
+    <!-- WARNING -->
+    <div id="pc-warning">
+      Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
+      utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
+      mode émulateur dans les outils de développement de votre navigateur.
+      Comment faire
+      <a href="https://piedweb.com/afficher-version-mobile" class="underline"
+        >ici</a
+      >
+    </div>
+
+    <!-- MENU BURGER -->
+    <div id="mobile-menu">
+      <ul>
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTENU -->
+    <main>
+      <!-- Flèche retour -->
+      <div class="back-arrow">
+        <a href="../../index.html">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 12H5M5 12L12 19M5 12L12 5"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <section class="partenaires-hero">
+        <h6>Par des athlètes, <br />pour des athlètes</h6>
+        <h1>DÉCOUVREZ<br />NOS PARTENAIRES</h1>
+        <div class="description">
+          <p>
+            Les partenaires de la FFSWF jouent un rôle essentiel dans le
+            développement et la structuration du street workout freestyle en
+            France. Grâce à leur soutien, nous pouvons organiser des
+            compétitions, former les talents de demain et faire rayonner notre
+            discipline à plus grande échelle.
+          </p>
+          <p>
+            Ensemble, nous construisons un écosystème solide, basé sur des
+            valeurs communes : engagement, innovation et impact positif.
+          </p>
+        </div>
+      </section>
+
+      <section class="partenaires-gallery">
+        <h2>ILS NOUS ONT<br />FAIT CONFIANCE !</h2>
+        <div class="partners-grid">
+          <div class="partner-card rounded-corners">
+            <div class="placeholder-image">
+              <span>PARTENAIRE 1</span>
+            </div>
+          </div>
+          <div class="partner-card rounded-corners">
+            <div class="placeholder-image">
+              <span>PARTENAIRE 2</span>
+            </div>
+          </div>
+          <div class="partner-card rounded-corners">
+            <div class="placeholder-image">
+              <span>PARTENAIRE 3</span>
+            </div>
+          </div>
+          <div class="partner-card rounded-corners">
+            <div class="placeholder-image">
+              <span>PARTENAIRE 4</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      //  REMOVE BEFORE PROD
+      setInterval(() => {
+        if (navigator.userAgent.includes("Windows")) {
+          document.getElementById("pc-warning").style.display = "block";
+        } else {
+          document.getElementById("pc-warning").style.display = "none";
+        }
+      }, 30);
+    </script>
+  </body>
+</html>
