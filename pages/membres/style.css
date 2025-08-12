@@ -178,7 +178,7 @@ nav img {
 }
 
 /* Style de base pour la page */
-.partenaires-hero {
+.membres-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,7 +190,7 @@ nav img {
   font-weight: 300;
 }
 
-.partenaires-hero h6 {
+.membres-hero h6 {
   opacity: 50%;
   font-weight: 100;
   font-size: 0.7rem;
@@ -198,7 +198,7 @@ nav img {
   line-height: 1.4;
 }
 
-.partenaires-hero h1 {
+.membres-hero h1 {
   font-size: 1.8rem;
   font-weight: 900;
   font-style: italic;
@@ -207,12 +207,12 @@ nav img {
   color: white;
 }
 
-.partenaires-hero .description {
+.membres-hero .description {
   max-width: 350px;
   margin-bottom: 1rem;
 }
 
-.partenaires-hero .description p {
+.membres-hero .description p {
   font-size: 0.85rem;
   line-height: 1.6;
   text-align: center;
@@ -223,7 +223,7 @@ nav img {
   letter-spacing: 0.5px;
 }
 
-.partenaires-gallery {
+.membres-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,7 +232,7 @@ nav img {
   color: white;
 }
 
-.partenaires-gallery h2 {
+.membres-gallery h2 {
   font-size: 1.8rem;
   font-weight: 900;
   font-style: italic;
@@ -243,7 +243,7 @@ nav img {
   padding: 0;
 }
 
-.partners-grid {
+.membres-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
