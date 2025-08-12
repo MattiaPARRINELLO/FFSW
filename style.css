@@ -27,7 +27,7 @@
 body {
   background-color: #ffffff; /* bg-gray-200 */
   margin: 0;
-  padding: 0;fff
+  padding: 0;
 }
 
 .frosted {
@@ -202,18 +202,10 @@ main .event-card .info-container {
   justify-content: space-between;
 }
 
-main .event-card .locationNdate {
-  /* background-color: orange; */
-}
-
 main .event-card .info-container div {
   display: flex;
   flex-direction: column;
   width: 50%;
-}
-
-main .event-card .inscription {
-  /* background-color: yellow; */
 }
 
 main .info-container .inscription p {
@@ -473,7 +465,6 @@ main button {
   width: 100%;
   max-width: 400px;
   gap: 1rem;
-  padding: 2rem;
   background-color: #ffffff;
 }
 
