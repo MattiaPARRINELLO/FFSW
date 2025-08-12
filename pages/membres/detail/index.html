@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FFSW - Maylisse Rabehi</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="frosted">
+      <img src="../../../assets/ffsw logo.png" alt="Logo" />
+      <button id="menu-toggle">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </nav>
+
+    <!-- WARNING -->
+    <div id="pc-warning">
+      Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
+      utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
+      mode émulateur dans les outils de développement de votre navigateur.
+      Comment faire
+      <a href="https://piedweb.com/afficher-version-mobile" class="underline"
+        >ici</a
+      >
+    </div>
+
+    <!-- MENU BURGER -->
+    <div id="mobile-menu">
+      <ul>
+        <li><a href="../../../index.html">Accueil</a></li>
+        <li><a href="../index.html">Membres</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTENU -->
+    <main>
+      <!-- Flèche retour -->
+      <div class="back-arrow">
+        <a href="../index.html">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 12H5M5 12L12 19M5 12L12 5"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Header avec tagline -->
+      <section class="member-header">
+        <h6>Par des athlètes, <br />pour des athlètes</h6>
+      </section>
+
+      <!-- Profil principal -->
+      <section class="member-profile">
+        <div class="member-role-badge">PRÉSIDENTE</div>
+
+        <div class="member-photo-container">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+            alt="Membre FFSW"
+            class="member-photo-detail"
+          />
+        </div>
+
+        <div class="member-info">
+          <h1 class="member-name-detail">MAYLISSE<br />RABEHI</h1>
+        </div>
+      </section>
+
+      <!-- Biographie -->
+      <section class="member-bio">
+        <p class="bio-text">
+          ENGAGÉE DEPUIS LES DÉBUTS DU STREET WORKOUT EN FRANCE, JE M'INVESTIS
+          POUR STRUCTURER, DÉVELOPPER ET FAIRE CONNAÎTRE CETTE DISCIPLINE. À
+          TRAVERS LA FFSW, JE SOUTIENS LES ATHLÈTES ET LES INITIATIVES QUI FONT
+          AVANCER NOTRE MOUVEMENT, AVEC LA PASSION DE PERFORMER.
+        </p>
+
+        <!-- Contact -->
+        <div class="contact-info">
+          <a href="mailto:maylisse.rabehi@gmail.com" class="contact-email">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <polyline
+                points="22,6 12,13 2,6"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Maylisse.rabehi@gmail.com
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      //  REMOVE BEFORE PROD
+      setInterval(() => {
+        if (navigator.userAgent.includes("Windows")) {
+          document.getElementById("pc-warning").style.display = "block";
+        } else {
+          document.getElementById("pc-warning").style.display = "none";
+        }
+      }, 30);
+    </script>
+  </body>
+</html>
