@@ -1,0 +1,317 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                           FFSW - PAGE COMITÉS                                                 ║
+║                                         Comités régionaux FFSW                                                ║
+║                                                                                                                 ║
+║  Description: Page présentant les comités régionaux avec logos, descriptions et statistiques                   ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        META TAGS & CONFIGURATION
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FFSW - Comités</title>
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        POLICES GOOGLE FONTS
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        RESSOURCES LOCALES
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    -->
+    <link rel="stylesheet" href="../../global.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Écran de chargement -->
+    <div id="loading-screen" class="loading-screen">
+      <img
+        src="../../assets/ffsw logo.png"
+        alt="FFSW Logo"
+        class="loading-logo"
+      />
+    </div>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    BARRE DE NAVIGATION                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
+    <nav class="frosted">
+      <img src="../../assets/ffsw logo.png" alt="Logo" />
+      <button id="menu-toggle">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </nav>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  AVERTISSEMENT PC                                     ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    ⚠️ À SUPPRIMER EN PRODUCTION ⚠️
+    -->
+    <div id="pc-warning">
+      Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
+      utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
+      mode émulateur dans les outils de développement de votre navigateur.
+      Comment faire
+      <a href="https://piedweb.com/afficher-version-mobile" class="underline"
+        >ici</a
+      >
+    </div>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                   MENU BURGER                                        ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
+    <div id="mobile-menu">
+      <ul>
+        <li><a href="../../index.html">Accueil</a></li>
+        <li><a href="index.html">Comités</a></li>
+        <li><a href="../membres/index.html">Membres</a></li>
+        <li><a href="../partenaires/index.html">Partenaires</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  CONTENU PRINCIPAL                                   ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
+    <main>
+      <!-- Flèche retour -->
+      <div class="back-arrow">
+        <a href="../../index.html">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 12H5M5 12L12 19M5 12L12 5"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Hero Section avec image de bannière -->
+      <section class="comites-hero">
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop"
+            alt="Groupe de membres des comités FFSW"
+            class="banner-image"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <h1>DÉCOUVREZ NOS<br />COMITÉS</h1>
+
+          <div class="hero-description">
+            <p>
+              Branches locales de la Fédération, les comités régissent le
+              terrain.
+            </p>
+            <p>
+              Ils organisent, accompagnent et font vivre le street workout dans
+              chaque région.
+            </p>
+            <p>
+              Une seule mission : faire pousser le mouvement partout en France
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section des comités -->
+      <section class="comites-list">
+        <div class="comites-grid">
+          <!-- Comité Île-de-France -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=IDF"
+                alt="Logo Île-de-France"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">ÎLE-DE-FRANCE</div>
+            <div class="comite-info">
+              <h3>PARIS & RÉGION PARISIENNE</h3>
+              <p class="comite-description">
+                Le plus grand comité de France, couvrant Paris et toute sa
+                région. Organise de nombreux événements et compétitions.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">150+ adhérents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comité Provence-Alpes-Côte d'Azur -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=PACA"
+                alt="Logo PACA"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">PACA</div>
+            <div class="comite-info">
+              <h3>PROVENCE-ALPES-CÔTE D'AZUR</h3>
+              <p class="comite-description">
+                Fort de sa communauté méditerranéenne, organise des événements
+                en bord de mer et dans les Alpes.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">95+ adhérents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comité Auvergne-Rhône-Alpes -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=ARA"
+                alt="Logo Auvergne-Rhône-Alpes"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">AUVERGNE-RHÔNE-ALPES</div>
+            <div class="comite-info">
+              <h3>LYON & RÉGION ALPINE</h3>
+              <p class="comite-description">
+                Dynamique région centrée sur Lyon, développe le street workout
+                en montagne et en zone urbaine.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">80+ adhérents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comité Hauts-de-France -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=HDF"
+                alt="Logo Hauts-de-France"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">HAUTS-DE-FRANCE</div>
+            <div class="comite-info">
+              <h3>LILLE & NORD DE LA FRANCE</h3>
+              <p class="comite-description">
+                Comité nordiste actif dans le développement des infrastructures
+                et l'organisation d'événements régionaux.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">70+ adhérents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comité Occitanie -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=OCC"
+                alt="Logo Occitanie"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">OCCITANIE</div>
+            <div class="comite-info">
+              <h3>TOULOUSE & SUD-OUEST</h3>
+              <p class="comite-description">
+                Couvre le grand Sud-Ouest, de Toulouse à Montpellier. Spécialisé
+                dans les événements outdoor.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">65+ adhérents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comité Nouvelle-Aquitaine -->
+          <div class="comite-card">
+            <div class="comite-logo">
+              <img
+                src="https://via.placeholder.com/80x80/1c2645/ffffff?text=NAQ"
+                alt="Logo Nouvelle-Aquitaine"
+                class="logo-placeholder"
+              />
+            </div>
+            <div class="comite-region">NOUVELLE-AQUITAINE</div>
+            <div class="comite-info">
+              <h3>BORDEAUX & CÔTE ATLANTIQUE</h3>
+              <p class="comite-description">
+                Profite de la côte atlantique pour organiser des événements
+                uniques sur la plage et en forêt.
+              </p>
+              <div class="comite-stats">
+                <span class="stat">55+ adhérents</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <!--
+        <div class="cta-section">
+          <h2>REJOIGNEZ UN COMITÉ</h2>
+          <p>Trouvez le comité le plus proche de chez vous et participez au développement du street workout dans votre région.</p>
+          <a href="../../index.html#contact" class="cta-button">NOUS CONTACTER</a>
+        </div>
+        -->
+      </section>
+    </main>
+
+    <script src="../../animations-simple.js"></script>
+    <script>
+      //  REMOVE BEFORE PROD
+      setInterval(() => {
+        if (navigator.userAgent.includes("Windows")) {
+          document.getElementById("pc-warning").style.display = "block";
+        } else {
+          document.getElementById("pc-warning").style.display = "none";
+        }
+      }, 30);
+    </script>
+  </body>
+</html>

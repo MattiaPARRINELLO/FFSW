@@ -1,0 +1,318 @@
+/*
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         FFSW - PAGE COMITÉS                                                   ║
+║                                         style.css - Comités                                                   ║
+║                                                                                                                 ║
+║  Description: Styles spécifiques à la page des comités régionaux FFSW                                         ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+║                                                                                                                 ║
+║  Dépendances: ../../global.css (styles communs)                                                               ║
+║  Note: Ce fichier ne contient que les styles spécifiques à la page comités                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  THÈME CLAIR POUR CETTE PAGE
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  FLÈCHE DE RETOUR
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+.back-arrow {
+  position: fixed;
+  top: 5rem;
+  left: 1.5rem;
+  z-index: 1000;
+  background-color: rgba(28, 38, 69, 0.8);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--transition-fast);
+}
+
+.back-arrow:hover {
+  background-color: rgba(28, 38, 69, 0.9);
+  transform: scale(1.1);
+}
+
+.back-arrow a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.back-arrow svg {
+  transition: transform var(--transition-fast);
+}
+
+.back-arrow:hover svg {
+  transform: translateX(-2px);
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION HÉRO COMITÉS
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+.comites-hero {
+  background-color: #ffffff;
+}
+
+.hero-image {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  display: none;
+}
+
+.hero-content {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.hero-content h1 {
+  color: var(--color-navy);
+  font-size: var(--font-size-xl);
+  font-weight: 900;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hero-description p {
+  color: var(--color-navy);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin: 0.8rem 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  LISTE DES COMITÉS
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+.comites-list {
+  padding: 3rem 1.5rem 4rem 1.5rem;
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+.comites-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  CARTES DE COMITÉS
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+.comite-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(28, 38, 69, 0.1);
+  transition: all var(--transition-medium);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.comite-card:hover {
+  background-color: #f1f3f4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.comite-logo {
+  margin-bottom: 1rem;
+}
+
+.logo-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(28, 38, 69, 0.1);
+}
+
+.comite-region {
+  background-color: var(--color-red-accent);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.comite-info h3 {
+  color: var(--color-navy);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comite-description {
+  color: var(--color-navy);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.comite-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background-color: rgba(28, 38, 69, 0.1);
+  color: var(--color-navy);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION CALL-TO-ACTION
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid rgba(28, 38, 69, 0.1);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cta-section h2 {
+  color: var(--color-navy);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+.cta-section p {
+  color: var(--color-navy);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-red-accent);
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-medium);
+  box-shadow: 0 4px 12px rgba(217, 13, 46, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #b8092a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 13, 46, 0.4);
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  RESPONSIVE DESIGN
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+@media (min-width: 768px) {
+  .comites-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    gap: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comites-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
