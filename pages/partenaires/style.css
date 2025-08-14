@@ -1,143 +1,35 @@
-/* CSS pour la Navbar uniquement */
+/*
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                      FFSW - PAGE PARTENAIRES                                                  ║
+║                                      style.css - Partenaires                                                  ║
+║                                                                                                                 ║
+║  Description: Styles spécifiques à la page des partenaires FFSW                                               ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+║                                                                                                                 ║
+║  Dépendances: ../../global.css (styles communs)                                                               ║
+║  Note: Ce fichier ne contient que les styles spécifiques à la page partenaires                                ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 
-.burger-line {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  border-radius: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
-
-/* Transformation en croix */
-#menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
-  transform-origin: left;
-}
-#menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
-  transform-origin: left;
-}
-
-* {
-  font-family: "Open Sans", sans-serif;
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  THÈME SOMBRE POUR CETTE PAGE
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
 
 body {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
 }
 
-.frosted {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  FLÈCHE DE RETOUR
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 11150;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav img {
-  height: 2.5rem;
-}
-
-#menu-toggle {
-  position: relative;
-  width: 2rem;
-  height: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-#pc-warning {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: #facc15;
-  color: black;
-  text-align: center;
-  padding: 5rem;
-  font-weight: 600;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-}
-
-#mobile-menu {
-  position: fixed;
-  top: 3.5rem;
-  left: 1rem;
-  right: 1rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(0.95);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-#mobile-menu.active {
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.rounded-corners {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  overflow: hidden;
-}
-
-#mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-#mobile-menu li {
-  margin-bottom: 0.75rem;
-}
-
-#mobile-menu a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s;
-}
-
-#mobile-menu a:hover {
-  color: #2563eb;
-}
-
-/* Flèche de retour */
 .back-arrow {
   position: fixed;
   top: 5rem;
@@ -152,7 +44,7 @@ nav img {
   justify-content: center;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
 
 .back-arrow:hover {
@@ -170,21 +62,26 @@ nav img {
 }
 
 .back-arrow svg {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-fast);
 }
 
 .back-arrow:hover svg {
   transform: translateX(-2px);
 }
 
-/* Style de base pour la page */
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION HÉRO PARTENAIRES
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
 .partenaires-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5rem 1.5rem 1rem 1.5rem;
-  background-color: #0f131f;
-  color: white;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
@@ -193,18 +90,18 @@ nav img {
 .partenaires-hero h6 {
   opacity: 50%;
   font-weight: 100;
-  font-size: 0.7rem;
+  font-size: var(--font-size-xs);
   margin-bottom: 1rem;
   line-height: 1.4;
 }
 
 .partenaires-hero h1 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xl);
   font-weight: 900;
   font-style: italic;
   margin-bottom: 2rem;
   letter-spacing: 2px;
-  color: white;
+  color: var(--color-white);
 }
 
 .partenaires-hero .description {
@@ -213,7 +110,7 @@ nav img {
 }
 
 .partenaires-hero .description p {
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   text-align: center;
   margin-bottom: 1rem;
@@ -223,17 +120,23 @@ nav img {
   letter-spacing: 0.5px;
 }
 
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  GALERIE DES PARTENAIRES
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
 .partenaires-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.5rem 3rem 1.5rem;
-  background-color: #0f131f;
-  color: white;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
 }
 
 .partenaires-gallery h2 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xl);
   font-weight: 900;
   font-style: italic;
   margin-bottom: 2rem;
@@ -251,9 +154,22 @@ nav img {
   max-width: 400px;
 }
 
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  CARTES PARTENAIRES
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
 .partner-card {
   aspect-ratio: 1/1;
   overflow: hidden;
+  border-radius: 8px;
+  transition: all var(--transition-medium);
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .placeholder-image {
@@ -263,8 +179,46 @@ nav img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-white);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: var(--font-size-sm);
   text-align: center;
+  border-radius: 8px;
+}
+
+.partner-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform var(--transition-medium);
+}
+
+.partner-card:hover .partner-logo {
+  transform: scale(1.1);
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  RESPONSIVE DESIGN
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+@media (min-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+  }
+
+  .partenaires-hero h1,
+  .partenaires-gallery h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+  }
 }
