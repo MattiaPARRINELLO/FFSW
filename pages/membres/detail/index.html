@@ -1,11 +1,34 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                           FFSW - SITE OFFICIEL                                                   ║
+║                                      Page de détail membre - Maylisse Rabehi                                   ║
+║                                                                                                                 ║
+║  Description: Page de profil détaillé d'un membre de la Fédération (Présidente)                               ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 14 août 2025                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        META TAGS & CONFIGURATION
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Configuration de base du document HTML avec métadonnées et encodage
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FFSW - Maylisse Rabehi</title>
 
-    <!-- Google Fonts -->
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        POLICES GOOGLE FONTS
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Chargement de la police Open Sans avec tous les poids (300-800) et variantes italiques
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,12 +36,32 @@
       rel="stylesheet"
     />
 
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        FEUILLES DE STYLE CSS
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    - global.css : styles globaux partagés par toutes les pages du site
+    - style.css : styles spécifiques à la page de détail membre
+    -->
     <link rel="stylesheet" href="../../../global.css" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        SCRIPTS JAVASCRIPT
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    - ffsw-scripts.js : gestion du menu burger et animations de scroll
+    Chargé avec "defer" pour exécution après parsing du DOM
+    -->
     <script src="../../../ffsw-scripts.js" defer></script>
   </head>
   <body>
-    <!-- Écran de chargement -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  ÉCRAN DE CHARGEMENT                                  ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Écran de chargement avec logo FFSW pour les transitions entre pages
+    -->
     <div id="loading-screen" class="loading-screen">
       <img
         src="../../../assets/ffsw logo.png"
@@ -27,9 +70,18 @@
       />
     </div>
 
-    <!-- NAVBAR -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    BARRE DE NAVIGATION                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Navigation principale avec logo FFSW et menu burger pour mobile
+    Classe "frosted" applique l'effet de flou en arrière-plan
+    -->
     <nav class="frosted">
+      <!-- Logo principal FFSW -->
       <img src="../../../assets/ffsw logo.png" alt="Logo" />
+
+      <!-- Menu hamburger (3 lignes) pour navigation mobile -->
       <button id="menu-toggle">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
@@ -37,7 +89,13 @@
       </button>
     </nav>
 
-    <!-- WARNING -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  AVERTISSEMENT DESKTOP                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Message d'avertissement pour les utilisateurs desktop
+    TODO: À supprimer une fois le design responsive finalisé
+    -->
     <div id="pc-warning">
       Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
       utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
@@ -48,7 +106,13 @@
       >
     </div>
 
-    <!-- MENU BURGER -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                      MENU BURGER                                     ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Menu de navigation mobile qui se déploie depuis le haut
+    Contient tous les liens de navigation du site
+    -->
     <div id="mobile-menu">
       <ul>
         <li><a href="../../../index.html">Accueil</a></li>
@@ -59,9 +123,19 @@
       </ul>
     </div>
 
-    <!-- CONTENU -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    CONTENU PRINCIPAL                                  ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Page de détail d'un membre avec profil complet et biographie
+    -->
     <main>
-      <!-- Flèche retour -->
+      <!--
+      ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+      ║                                    NAVIGATION RETOUR                                  ║
+      ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+      Flèche de retour vers la page membres
+      -->
       <div class="back-arrow">
         <a href="../index.html">
           <svg
@@ -82,30 +156,49 @@
         </a>
       </div>
 
-      <!-- Header avec tagline -->
+      <!--
+      ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+      ║                                     EN-TÊTE PAGE                                     ║
+      ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+      Tagline officiel de la FFSW
+      -->
       <section class="member-header">
         <h6>Par des athlètes, <br />pour des athlètes</h6>
       </section>
 
-      <!-- Profil principal -->
+      <!--
+      ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+      ║                                   PROFIL DU MEMBRE                                   ║
+      ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+      Section principale avec badge de rôle, photo et nom du membre
+      -->
       <section class="member-profile">
+        <!-- Badge indiquant le rôle dans la fédération -->
         <div class="member-role-badge">PRÉSIDENTE</div>
 
+        <!-- Photo du membre -->
         <div class="member-photo-container">
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+            src="../../../assets/img/membres/maelisse.png"
             alt="Membre FFSW"
             class="member-photo-detail"
           />
         </div>
 
+        <!-- Nom et informations du membre -->
         <div class="member-info">
           <h1 class="member-name-detail">MAYLISSE<br />RABEHI</h1>
         </div>
       </section>
 
-      <!-- Biographie -->
+      <!--
+      ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+      ║                                  BIOGRAPHIE MEMBRE                                   ║
+      ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+      Description personnelle et informations de contact du membre
+      -->
       <section class="member-bio">
+        <!-- Texte de présentation personnelle -->
         <p class="bio-text">
           ENGAGÉE DEPUIS LES DÉBUTS DU STREET WORKOUT EN FRANCE, JE M'INVESTIS
           POUR STRUCTURER, DÉVELOPPER ET FAIRE CONNAÎTRE CETTE DISCIPLINE. À
@@ -113,9 +206,15 @@
           AVANCER NOTRE MOUVEMENT, AVEC LA PASSION DE PERFORMER.
         </p>
 
-        <!-- Contact -->
+        <!--
+        ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+        ║                                  CONTACT MEMBRE                                      ║
+        ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+        Lien email de contact avec icône
+        -->
         <div class="contact-info">
           <a href="mailto:maylisse.rabehi@gmail.com" class="contact-email">
+            <!-- Icône email SVG -->
             <svg
               width="20"
               height="20"
@@ -144,16 +243,31 @@
       </section>
     </main>
 
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    SCRIPTS JAVASCRIPT                                 ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
+
+    <!-- Script des animations et transitions -->
     <script src="../../../animations.js"></script>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                               DÉTECTION DESKTOP/MOBILE                               ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Script temporaire d'avertissement pour les utilisateurs desktop
+    TODO: À supprimer une fois le responsive design finalisé
+    -->
     <script>
-      //  REMOVE BEFORE PROD
+      // Détection périodique du type d'appareil pour afficher l'avertissement
       setInterval(() => {
         if (navigator.userAgent.includes("Windows")) {
           document.getElementById("pc-warning").style.display = "block";
         } else {
           document.getElementById("pc-warning").style.display = "none";
         }
-      }, 30);
+      }, 30); // Vérification toutes les 30ms
     </script>
   </body>
 </html>
