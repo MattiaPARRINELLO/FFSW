@@ -39,7 +39,7 @@ class FFSWMenuManager {
         this.setupMenuToggle();
         this.setupOutsideClickClose();
         this.setupLinkClickClose();
-        
+
         console.log('✅ FFSW Menu Manager initialisé');
     }
 
@@ -54,7 +54,7 @@ class FFSWMenuManager {
     // Fermeture automatique en cliquant à l'extérieur
     setupOutsideClickClose() {
         document.addEventListener('click', (event) => {
-            if (!this.menuToggle.contains(event.target) && 
+            if (!this.menuToggle.contains(event.target) &&
                 !this.mobileMenu.contains(event.target)) {
                 this.closeMenu();
             }
@@ -94,7 +94,7 @@ class FFSWScrollAnimations {
             '.event-card',      // Page accueil
             '.card'             // Classe générique
         ];
-        
+
         this.init();
     }
 
@@ -155,20 +155,20 @@ class FFSWPageManager {
     // Détecte la page actuelle basée sur l'URL
     detectCurrentPage() {
         const path = window.location.pathname;
-        
+
         if (path.includes('membres')) return 'membres';
         if (path.includes('partenaires')) return 'partenaires';
         if (path.includes('comites')) return 'comites';
         if (path.includes('detail')) return 'detail';
-        
+
         return 'accueil';
     }
 
     init() {
         console.log(`📄 Page détectée: ${this.currentPage}`);
-        
+
         // Fonctionnalités spécifiques par page
-        switch(this.currentPage) {
+        switch (this.currentPage) {
             case 'membres':
                 this.setupMembersPage();
                 break;
@@ -243,12 +243,12 @@ class FFSWPageManager {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 FFSW Scripts - Initialisation...');
-    
+
     // Initialisation de tous les managers
     const menuManager = new FFSWMenuManager();
     const scrollAnimations = new FFSWScrollAnimations();
     const pageManager = new FFSWPageManager();
-    
+
     console.log('✅ FFSW Scripts - Tous les systèmes opérationnels');
 });
 
@@ -261,13 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Objet global FFSW pour accès externe si nécessaire
 window.FFSW = {
     version: '1.0.0',
-    
+
     // Méthodes utilitaires publiques
     closeMenu: () => {
         document.getElementById('menu-toggle')?.classList.remove('active');
         document.getElementById('mobile-menu')?.classList.remove('active');
     },
-    
+
     // Debug info
     getPageInfo: () => {
         return {
