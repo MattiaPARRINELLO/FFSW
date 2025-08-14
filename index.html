@@ -1,11 +1,35 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                           FFSW - SITE OFFICIEL                                                   ║
+║                                         Page d'accueil principale                                               ║
+║                                                                                                                 ║
+║  Description: Page d'accueil du site de la Fédération Française de Street Workout                               ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        META TAGS & CONFIGURATION
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Configuration de base du document HTML avec métadonnées et encodage
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FFSW - Accueil</title>
 
-    <!-- Google Fonts -->
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        POLICES GOOGLE FONTS
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Chargement de la police Open Sans avec tous les poids (300-800) et variantes italiques
+    Preconnect pour optimiser les performances de chargement
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,13 +37,38 @@
       rel="stylesheet"
     />
 
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        RESSOURCES LOCALES
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Feuille de style globale (commune) puis spécifique à la page
+    -->
+    <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- NAVBAR -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  ÉCRAN DE CHARGEMENT                                  ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Écran de chargement avec logo FFSW pour les transitions entre pages
+    -->
+    <div id="loading-screen" class="loading-screen">
+      <img src="assets/ffsw logo.png" alt="FFSW Logo" class="loading-logo" />
+    </div>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    BARRE DE NAVIGATION                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Navigation principale avec logo FFSW et menu burger pour mobile
+    Classe "frosted" applique l'effet de flou en arrière-plan
+    -->
     <nav class="frosted">
+      <!-- Logo principal FFSW -->
       <img src="assets/ffsw logo.png" alt="Logo" />
+      
+      <!-- Menu hamburger (3 lignes) pour navigation mobile -->
       <button id="menu-toggle">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
@@ -27,7 +76,13 @@
       </button>
     </nav>
 
-    <!-- WARNING -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  AVERTISSEMENT PC                                     ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Message d'information pour les utilisateurs sur ordinateur
+    Recommande l'utilisation mobile ou du mode développeur
+    -->
     <div id="pc-warning">
       Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
       utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
@@ -38,27 +93,53 @@
       >
     </div>
 
-    <!-- MENU BURGER -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                   MENU BURGER                                        ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Menu de navigation mobile avec effet de flou et fond transparent
+    Activé/désactivé via JavaScript avec la classe "active"
+    -->
     <div id="mobile-menu">
       <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="pages/comites/index.html">Comités</a></li>
+        <li><a href="pages/membres/index.html">Membres</a></li>
+        <li><a href="pages/partenaires/index.html">Partenaires</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
 
-    <!-- CONTENU -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  CONTENU PRINCIPAL                                   ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
     <main>
+      <!-- 
+      ═══════════════════════════════════════════════════════════════════════════════════════
+                                        SECTION HERO
+      ═══════════════════════════════════════════════════════════════════════════════════════
+      Section d'accueil avec titre principal et bouton call-to-action
+      -->
       <section class="rounded-corners home-page">
         <h1>BIENVENUE À LA FÉDÉRATION DE STREET WORKOUT FREESTYLE</h1>
-        <button>En savoir plus</button>
+        <button onclick="window.location.href='#whoweare'">En savoir plus</button>
       </section>
+      
+      <!-- 
+      ═══════════════════════════════════════════════════════════════════════════════════════
+                                    SECTION BÉNÉFICES FÉDÉRATION
+      ═══════════════════════════════════════════════════════════════════════════════════════
+      Présentation des avantages de rejoindre la fédération avec image illustrative
+      -->
       <section class="benefices-fede">
         <img
           class="rounded-corners"
           src="assets/img/elbow-lever.png"
           alt="Elbow Lever"
         />
+        <!-- Contenu textuel des bénéfices -->
         <div class="rounded-corners">
           <h2>DÉCOUVREZ<br />LES BÉNÉFICES <br />DE LA FÉDÉRATION</h2>
           <p>
@@ -67,36 +148,52 @@
             plateforme dédiée pour gérer vos compétitions et suivre vos
             performances.
           </p>
-          <button>En savoir plus</button>
+          <button onclick="window.location.href='pages/comites/index.html'">En savoir plus</button>
         </div>
       </section>
+      
+      <!-- 
+      ═══════════════════════════════════════════════════════════════════════════════════════
+                                        SECTION ÉVÉNEMENTS
+      ═══════════════════════════════════════════════════════════════════════════════════════
+      Présentation des événements à venir avec carte d'événement détaillée
+      Inclut image de fond, titre, lieu, date et compte à rebours
+      -->
       <section class="events">
         <h2 style="font-weight: 900">DÉCOUVREZ NOS ÉVÉNEMENTS</h2>
+        
+        <!-- Carte d'événement avec image de fond -->
         <div
           class="event-card rounded-corners"
           style="background-image: url('assets/img/event.png')"
         >
+          <!-- Informations détaillées de l'événement -->
           <div class="info-card rounded-corners">
-            <!-- Info event -->
+            <!-- Titre de l'événement -->
             <div><h3 class="event-title">Championnat National</h3></div>
+            
+            <!-- Container des informations pratiques -->
             <div class="info-container">
-              <!-- Date, lieu et inscription -->
+              <!-- Lieu et date de l'événement -->
               <div class="locationNdate">
                 <p class="location">Paris</p>
                 <p class="date">10 Décembre 2023</p>
               </div>
+              
+              <!-- Section inscription avec compte à rebours -->
               <div class="inscription">
-              <p>Fermeture des inscriptions</p>
-              <div class="countdown">
-                <div class="rounded-corners" data-unit="j"><span>12</span></div>
-                <div class="rounded-corners" data-unit="h"><span>22</span></div>
-                <div class="rounded-corners" data-unit="m"><span>55</span></div>
+                <p>Fermeture des inscriptions</p>
+                <!-- Compte à rebours avec jours/heures/minutes -->
+                <div class="countdown">
+                  <div class="rounded-corners" data-unit="j"><span>12</span></div>
+                  <div class="rounded-corners" data-unit="h"><span>22</span></div>
+                  <div class="rounded-corners" data-unit="m"><span>55</span></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="whoweare">
+      <section class="whoweare" id="whoweare">
         <h6>Par des athlètes, <br />pour des athlètes</h6>
         <h2>QUI SOMMES-NOUS ?</h2>
         <div class="paragraph">
@@ -115,11 +212,11 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="rounded-corners">Nos partenaires</button>
-          <button class="rounded-corners">Les membres</button>
+          <button class="rounded-corners" onclick="window.location.href='pages/partenaires/index.html'">Nos partenaires</button>
+          <button class="rounded-corners" onclick="window.location.href='pages/membres/index.html'">Les membres</button>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <h2>CONTACTEZ-NOUS</h2>
         <form class="contact-form rounded-corners">
           <input type="text" id="name" name="name" required placeholder="Nom et Prénom" />
@@ -134,15 +231,25 @@
         </form>
     </main>
 
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    SCRIPT INLINE                                     ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Script temporaire pour afficher l'avertissement PC (À SUPPRIMER EN PRODUCTION)
+    -->
+    <!-- Scripts JavaScript -->
+    <script src="script.js"></script>
+    <script src="animations-simple.js"></script>
     <script>
-      //  REMOVE BEFORE PROD
+      // ⚠️ ATTENTION : À SUPPRIMER AVANT LA MISE EN PRODUCTION ⚠️
+      // Script pour détecter l'utilisation d'un PC et afficher l'avertissement
       setInterval(() => {
         if (navigator.userAgent.includes("Windows")) {
           document.getElementById("pc-warning").style.display = "block";
         } else {
           document.getElementById("pc-warning").style.display = "none";
         }
-      }, 30);
+      }, 30); // Vérification toutes les 30ms
     </script>
   </body>
 </html>

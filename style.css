@@ -1,162 +1,141 @@
-.burger-line {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  border-radius: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
+/*
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                           FFSW - PAGE D'ACCUEIL                                               ║
+║                                              style.css                                                        ║
+║                                                                                                                 ║
+║  Description: Styles spécifiques à la page d'accueil FFSW                                                     ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+║                                                                                                                 ║
+║  Dépendances: global.css (styles communs)                                                                     ║
+║  Note: Ce fichier ne contient que les styles spécifiques à cette page                                         ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 
-/* Transformation en croix */
-#menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
-  transform-origin: left;
-}
-#menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
-  transform-origin: left;
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION HERO
+═══════════════════════════════════════════════════════════════════════════════════════
+Section principale avec image de fond et titre d'accueil
+Variable CSS --hero-bg-offset pour contrôler l'offset vertical de l'image
+*/
 
-* {
-  font-family: "Open Sans", sans-serif;
-}
+.home-page {
+  --hero-bg-offset: 60px; /* Variable pour l'offset vertical de l'image */
 
-body {
-  background-color: #ffffff; /* bg-gray-200 */
-  margin: 0;
-  padding: 0;
-}
-
-.frosted {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 11150;
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav img {
-  height: 2.5rem;
-}
-
-#menu-toggle {
-  position: relative;
-  width: 2rem;
-  height: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-#pc-warning {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: #facc15; /* yellow-300 */
-  color: black;
-  text-align: center;
-  padding: 5rem;
-  font-weight: 600;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-}
-
-#mobile-menu {
-  position: fixed;
-  top: 3.5rem;
-  left: 1rem;
-  right: 1rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.3);
-
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transform: scale(0.95);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-#mobile-menu.active {
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.rounded-corners {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  overflow: hidden;
-}
-
-#mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-#mobile-menu li {
-  margin-bottom: 0.75rem;
-}
-
-#mobile-menu a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s;
-}
-
-#mobile-menu a:hover {
-  color: #2563eb; /* blue-600 */
-}
-
-main .home-page {
-  padding-top: 5rem;
-  padding-bottom: 2.5rem; /* espace sous le bouton */
-  background-size: cover;
-  background-position: top;
-  width: 100vw;
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 1.5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   background-image: url("assets/img/front.jpg");
+  background-size: cover;
+  background-position: center calc(50% + var(--hero-bg-offset));
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-main .benefices-fede {
+.home-page h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.875rem;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--color-navy);
+}
+
+.home-page button {
+  margin-top: auto;
+  color: var(--color-white);
+  background-color: var(--color-red-accent);
+  box-shadow: 0 5px 15px rgba(217, 13, 46, 0.5);
+  border-radius: var(--border-radius-small);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.home-page button:hover {
+  background-color: #b8091f;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION BÉNÉFICES
+═══════════════════════════════════════════════════════════════════════════════════════
+Section expliquant les avantages de la fédération
+*/
+
+.benefices-fede {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1rem;
 }
 
-main .events {
+.benefices-fede img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.benefices-fede > div {
+  text-align: center;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 1.5rem;
+}
+
+.benefices-fede h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 2rem;
+  letter-spacing: 3px;
+  font-style: italic;
+  line-height: 2rem;
+}
+
+.benefices-fede p {
+  text-align: justify;
+  line-height: 26px;
+  font-size: 16px;
+}
+
+.benefices-fede button {
+  margin-top: 1rem;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius-small);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.benefices-fede button:hover {
+  background-color: #f0f0f0;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION ÉVÉNEMENTS
+═══════════════════════════════════════════════════════════════════════════════════════
+Présentation des événements à venir avec carte détaillée
+*/
+
+.events {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,15 +144,15 @@ main .events {
   padding-bottom: 70px;
 }
 
-main .events h2 {
+.events h2 {
   text-align: center;
-  color: #1c2645;
+  color: var(--color-navy);
   font-weight: 900;
   font-style: italic;
   font-size: 1.8rem;
 }
 
-main .event-card {
+.event-card {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -186,31 +165,52 @@ main .event-card {
   align-items: center;
 }
 
-main .event-card .info-card {
+.event-card .info-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 93%;
-  background-color: white;
+  background-color: var(--color-white);
   margin: 0 1rem 1rem 1rem;
   padding: 5px 10px 20px 10px;
 }
 
-main .event-card .info-container {
+.event-card .info-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-main .event-card .info-container div {
+.event-card .info-container > div {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-main .info-container .inscription p {
+.event-card .event-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.event-card .location {
+  font-size: 1rem;
+  color: var(--color-red-accent);
+  margin: 0;
+}
+
+.event-card .date {
+  font-size: 1rem;
+  color: var(--color-navy);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Compte à rebours */
+.inscription p {
   font-size: 0.7rem;
-  color: #1c2645;
+  color: var(--color-navy);
   opacity: 0.5;
   margin: 0;
   display: flex;
@@ -219,7 +219,7 @@ main .info-container .inscription p {
   height: 25%;
 }
 
-.info-container .inscription .countdown {
+.inscription .countdown {
   height: 75%;
   width: 100%;
   display: flex;
@@ -228,162 +228,51 @@ main .info-container .inscription p {
   gap: 0.3rem;
 }
 
-main .event-card .info-container .inscription .countdown div {
+.countdown div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-small);
   aspect-ratio: 2/1;
   width: 30%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   gap: 0.1rem;
 }
 
-main .event-card .info-container .inscription .countdown div span {
+.countdown div span {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #d90d2e;
+  color: var(--color-red-accent);
   line-height: 1;
 }
 
-main .event-card .info-container .inscription .countdown div::after {
+.countdown div::after {
   content: attr(data-unit);
   font-size: 0.7rem;
   font-weight: 500;
   color: #666666;
 }
 
-main .event-card .locationNdate p {
-  margin: 0 0;
-}
-
-main .event-card .location {
-  font-size: 1rem;
-  color: #d90d2e;
-}
-
-main .event-card .date {
-  font-size: 1rem;
-  color: #1c2645;
-  font-weight: 600;
-}
-
-main .event-card .info-card .event-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1c2645;
-  margin-bottom: 0.5rem;
-}
-
-main .benefices-fede img {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-main .benefices-fede div {
-  text-align: center;
-  background-color: #1c2645;
-  color: white;
-  padding: 1.5rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 2rem;
-  letter-spacing: 3px;
-  font-style: italic;
-  line-height: 2rem;
-}
-
-main .benefices-fede button {
-  margin-top: 1rem;
-  color: #1c2645;
-  background-color: #ffffff;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 1.5rem 3rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-main .benefices-fede p {
-  text-align: justify;
-  line-height: 26px;
-  font-size: 16px;
-}
-main h1 {
-  margin-top: 2.5rem;
-  font-size: 1.875rem;
-  font-weight: 900;
-  font-style: italic;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: #1c2645;
-}
-
-main button {
-  margin-top: auto; /* pousse le bouton vers le bas */
-  color: white;
-  background-color: #d90d2e;
-  box-shadow: 0 5px 15px rgba(217, 13, 46, 0.5);
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 1.5rem 1rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.burger-line {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  border-radius: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
-
-#menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
-  transform-origin: left;
-}
-#menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
-  transform-origin: left;
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION "QUI SOMMES-NOUS"
+═══════════════════════════════════════════════════════════════════════════════════════
+Section de présentation avec fond sombre
+*/
 
 .whoweare {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 1.5rem;
-  background-color: #0f131f;
-  color: white;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
-}
-
-.whoweare h2 {
-  font-size: 1.8rem;
-  font-weight: 900;
-  font-style: italic;
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
 }
 
 .whoweare h6 {
@@ -392,6 +281,14 @@ main button {
   font-size: 0.7rem;
   margin-bottom: 1rem;
   line-height: 1.4;
+}
+
+.whoweare h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
 }
 
 .whoweare .paragraph {
@@ -420,8 +317,8 @@ main button {
 }
 
 .whoweare .buttons button {
-  background-color: #ffffff;
-  color: #1c2645;
+  background-color: var(--color-white);
+  color: var(--color-navy);
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
   border: none;
   padding: 1rem 2rem;
@@ -430,7 +327,7 @@ main button {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
 
 .whoweare .buttons button:hover {
@@ -439,18 +336,24 @@ main button {
   box-shadow: 0 7px 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Section Contact */
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION CONTACT
+═══════════════════════════════════════════════════════════════════════════════════════
+Formulaire de contact en bas de page
+*/
+
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  background-color: #ffff;
+  background-color: var(--color-white);
   min-height: 100vh;
 }
 
 .contact h2 {
-  color: #1c2645;
+  color: var(--color-navy);
   font-weight: 900;
   font-style: italic;
   font-size: 1.8rem;
@@ -465,7 +368,7 @@ main button {
   width: 100%;
   max-width: 400px;
   gap: 1rem;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .contact-form input,
@@ -474,13 +377,13 @@ main button {
   padding: 1rem;
   border: none;
   background-color: #e8e8e8;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-small);
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
-  color: #1c2645;
+  color: var(--color-navy);
   box-sizing: border-box;
   outline: none;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-fast);
 }
 
 .contact-form input::placeholder,
@@ -502,14 +405,15 @@ main button {
 }
 
 .contact-form button {
-  background-color: #d90d2e;
-  color: white;
+  background-color: var(--color-red-accent);
+  color: var(--color-white);
   border: none;
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
   margin-top: 1rem;
   box-shadow: 0 4px 15px rgba(217, 13, 46, 0.3);
 }
