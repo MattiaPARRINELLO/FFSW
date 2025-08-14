@@ -13,10 +13,20 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="../../../global.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Écran de chargement -->
+    <div id="loading-screen" class="loading-screen">
+      <img
+        src="../../../assets/ffsw logo.png"
+        alt="FFSW Logo"
+        class="loading-logo"
+      />
+    </div>
+
     <!-- NAVBAR -->
     <nav class="frosted">
       <img src="../../../assets/ffsw logo.png" alt="Logo" />
@@ -42,9 +52,10 @@
     <div id="mobile-menu">
       <ul>
         <li><a href="../../../index.html">Accueil</a></li>
+        <li><a href="../../comites/index.html">Comités</a></li>
         <li><a href="../index.html">Membres</a></li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../../partenaires/index.html">Partenaires</a></li>
+        <li><a href="../../../index.html#contact">Contact</a></li>
       </ul>
     </div>
 
@@ -133,6 +144,8 @@
       </section>
     </main>
 
+    <script src="../../../animations-simple.js"></script>
+    <script src="detail-animations.js"></script>
     <script>
       //  REMOVE BEFORE PROD
       setInterval(() => {

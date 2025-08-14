@@ -1,11 +1,35 @@
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                           FFSW - PAGE MEMBRES                                                  ║
+║                                         Liste des membres actifs                                               ║
+║                                                                                                                 ║
+║  Description: Page présentant les membres de la fédération avec cartes détaillées                              ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        META TAGS & CONFIGURATION
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Configuration de base du document HTML avec métadonnées et encodage
+    -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FFSW - Membres</title>
 
-    <!-- Google Fonts -->
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        POLICES GOOGLE FONTS
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Chargement de la police Open Sans avec tous les poids (300-800) et variantes italiques
+    Preconnect pour optimiser les performances de chargement
+    -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,13 +37,38 @@
       rel="stylesheet"
     />
 
+    <!-- 
+    ═══════════════════════════════════════════════════════════════════════════════════════
+                                        RESSOURCES LOCALES
+    ═══════════════════════════════════════════════════════════════════════════════════════
+    Feuille de style de la page membres et script JavaScript avec chargement différé
+    -->
+    <link rel="stylesheet" href="../../global.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- NAVBAR -->
+    <!-- Écran de chargement -->
+    <div id="loading-screen" class="loading-screen">
+      <img
+        src="../../assets/ffsw logo.png"
+        alt="FFSW Logo"
+        class="loading-logo"
+      />
+    </div>
+
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                    BARRE DE NAVIGATION                                ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Navigation principale avec logo FFSW et menu burger pour mobile
+    Logo pointe vers le répertoire parent (../../)
+    -->
     <nav class="frosted">
+      <!-- Logo principal FFSW -->
       <img src="../../assets/ffsw logo.png" alt="Logo" />
+
+      <!-- Menu hamburger (3 lignes) pour navigation mobile -->
       <button id="menu-toggle">
         <span class="burger-line"></span>
         <span class="burger-line"></span>
@@ -27,7 +76,13 @@
       </button>
     </nav>
 
-    <!-- WARNING -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  AVERTISSEMENT PC                                     ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Message d'information pour les utilisateurs sur ordinateur
+    ⚠️ À SUPPRIMER EN PRODUCTION ⚠️
+    -->
     <div id="pc-warning">
       Attention : Vous utilisez un PC. Le site n'est pas encore pret pour être
       utilisé sur un ordinateur, merci d'utiliser un téléphone ou utiliser le
@@ -38,16 +93,27 @@
       >
     </div>
 
-    <!-- MENU BURGER -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                   MENU BURGER                                        ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    Menu de navigation mobile avec liens vers les différentes pages
+    -->
     <div id="mobile-menu">
       <ul>
         <li><a href="../../index.html">Accueil</a></li>
-        <li><a href="#">À propos</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="../comites/index.html">Comités</a></li>
+        <li><a href="index.html">Membres</a></li>
+        <li><a href="../partenaires/index.html">Partenaires</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
       </ul>
     </div>
 
-    <!-- CONTENU -->
+    <!--
+    ╔═══════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                  CONTENU PRINCIPAL                                   ║
+    ╚═══════════════════════════════════════════════════════════════════════════════════════╝
+    -->
     <main>
       <!-- Flèche retour -->
       <div class="back-arrow">
@@ -85,66 +151,75 @@
 
       <section class="membres-gallery">
         <div class="membres-grid">
-          <div class="member-card rounded-corners">
-            <div class="member-role">Présidente</div>
-            <div class="member-image">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=300&h=300&fit=crop&crop=face"
-                alt="Maylisse Rabehi"
-                class="member-photo"
-              />
+          <a href="detail/index.html" class="member-link">
+            <div class="member-card rounded-corners">
+              <div class="member-role">Présidente</div>
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=300&h=300&fit=crop&crop=face"
+                  alt="Maylisse Rabehi"
+                  class="member-photo"
+                />
+              </div>
+              <div class="member-name">
+                <h3>Maylisse</h3>
+                <h3>Rabehi</h3>
+              </div>
             </div>
-            <div class="member-name">
-              <h3>Maylisse</h3>
-              <h3>Rabehi</h3>
+          </a>
+          <a href="detail/index.html" class="member-link">
+            <div class="member-card rounded-corners">
+              <div class="member-role">Vice-Président</div>
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+                  alt="Vice-Président"
+                  class="member-photo"
+                />
+              </div>
+              <div class="member-name">
+                <h3>Thomas</h3>
+                <h3>Martin</h3>
+              </div>
             </div>
-          </div>
-          <div class="member-card rounded-corners">
-            <div class="member-role">Vice-Président</div>
-            <div class="member-image">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-                alt="Vice-Président"
-                class="member-photo"
-              />
+          </a>
+          <a href="detail/index.html" class="member-link">
+            <div class="member-card rounded-corners">
+              <div class="member-role">Secrétaire</div>
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
+                  alt="Secrétaire"
+                  class="member-photo"
+                />
+              </div>
+              <div class="member-name">
+                <h3>Sophie</h3>
+                <h3>Dubois</h3>
+              </div>
             </div>
-            <div class="member-name">
-              <h3>Thomas</h3>
-              <h3>Martin</h3>
+          </a>
+          <a href="detail/index.html" class="member-link">
+            <div class="member-card rounded-corners">
+              <div class="member-role">Trésorier</div>
+              <div class="member-image">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+                  alt="Trésorier"
+                  class="member-photo"
+                />
+              </div>
+              <div class="member-name">
+                <h3>Antoine</h3>
+                <h3>Legrand</h3>
+              </div>
             </div>
-          </div>
-          <div class="member-card rounded-corners">
-            <div class="member-role">Secrétaire</div>
-            <div class="member-image">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
-                alt="Secrétaire"
-                class="member-photo"
-              />
-            </div>
-            <div class="member-name">
-              <h3>Sophie</h3>
-              <h3>Dubois</h3>
-            </div>
-          </div>
-          <div class="member-card rounded-corners">
-            <div class="member-role">Trésorier</div>
-            <div class="member-image">
-              <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
-                alt="Trésorier"
-                class="member-photo"
-              />
-            </div>
-            <div class="member-name">
-              <h3>Antoine</h3>
-              <h3>Legrand</h3>
-            </div>
-          </div>
+          </a>
         </div>
       </section>
     </main>
 
+    <script src="../../animations-simple.js"></script>
     <script>
       //  REMOVE BEFORE PROD
       setInterval(() => {

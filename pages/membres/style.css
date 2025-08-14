@@ -1,143 +1,36 @@
-/* CSS pour la Navbar uniquement */
+/*
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         FFSW - PAGE MEMBRES                                                   ║
+║                                         style.css - Membres                                                   ║
+║                                                                                                                 ║
+║  Description: Styles spécifiques à la page des membres de la fédération FFSW                                  ║
+║  Auteur: FFSW Team                                                                                             ║
+║  Date de création: 2025                                                                                        ║
+║  Dernière modification: 13 août 2025                                                                           ║
+║                                                                                                                 ║
+║  Dépendances: ../../global.css (styles communs)                                                               ║
+║  Note: Ce fichier ne contient que les styles spécifiques à la page membres                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
 
-.burger-line {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  border-radius: 1px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform-origin: center;
-}
-
-/* Transformation en croix */
-#menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(2px, 2px);
-  transform-origin: left;
-}
-#menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-#menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(2px, -2px);
-  transform-origin: left;
-}
-
-* {
-  font-family: "Open Sans", sans-serif;
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  THÈME SOMBRE POUR CETTE PAGE
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
 
 body {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
 }
 
-.frosted {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  FLÈCHE DE RETOUR
+═══════════════════════════════════════════════════════════════════════════════════════
+Bouton de navigation pour revenir en arrière
+*/
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 11150;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-nav img {
-  height: 2.5rem;
-}
-
-#menu-toggle {
-  position: relative;
-  width: 2rem;
-  height: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-#pc-warning {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  background-color: #facc15;
-  color: black;
-  text-align: center;
-  padding: 5rem;
-  font-weight: 600;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-}
-
-#mobile-menu {
-  position: fixed;
-  top: 3.5rem;
-  left: 1rem;
-  right: 1rem;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(0.95);
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-#mobile-menu.active {
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.rounded-corners {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-  overflow: hidden;
-}
-
-#mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-#mobile-menu li {
-  margin-bottom: 0.75rem;
-}
-
-#mobile-menu a {
-  display: block;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  transition: color 0.3s;
-}
-
-#mobile-menu a:hover {
-  color: #2563eb;
-}
-
-/* Flèche de retour */
 .back-arrow {
   position: fixed;
   top: 5rem;
@@ -152,7 +45,7 @@ nav img {
   justify-content: center;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
 
 .back-arrow:hover {
@@ -170,21 +63,27 @@ nav img {
 }
 
 .back-arrow svg {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-fast);
 }
 
 .back-arrow:hover svg {
   transform: translateX(-2px);
 }
 
-/* Style de base pour la page */
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  SECTION HÉRO MEMBRES
+═══════════════════════════════════════════════════════════════════════════════════════
+Section d'introduction avec fond sombre
+*/
+
 .membres-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5rem 1.5rem 1rem 1.5rem;
-  background-color: #0f131f;
-  color: white;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
   text-align: center;
   text-transform: uppercase;
   font-weight: 300;
@@ -204,7 +103,7 @@ nav img {
   font-style: italic;
   margin-bottom: 2rem;
   letter-spacing: 2px;
-  color: white;
+  color: var(--color-white);
 }
 
 .membres-hero .description {
@@ -223,13 +122,20 @@ nav img {
   letter-spacing: 0.5px;
 }
 
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  GALERIE DES MEMBRES
+═══════════════════════════════════════════════════════════════════════════════════════
+Section principale avec grille des membres
+*/
+
 .membres-gallery {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 1.5rem 3rem 1.5rem;
-  background-color: #0f131f;
-  color: white;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
 }
 
 .membres-gallery h2 {
@@ -252,25 +158,30 @@ nav img {
   padding: 0 1rem;
 }
 
-.partner-card {
-  aspect-ratio: 1/1;
-  overflow: hidden;
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  CARTES DE MEMBRES
+═══════════════════════════════════════════════════════════════════════════════════════
+Cartes individuelles avec photo, nom et rôle
+*/
+
+.member-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 8px;
 }
 
-.placeholder-image {
-  width: 100%;
-  height: 100%;
-  background-color: #666666;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-align: center;
+.member-link:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
-/* Cartes des membres */
+.member-link:hover .member-card {
+  transform: scale(1.02);
+}
+
 .member-card {
   aspect-ratio: 2.5/4;
   background-color: transparent;
@@ -279,11 +190,12 @@ nav img {
   position: relative;
   overflow: visible;
   gap: 0.4rem;
+  transition: transform 0.2s ease;
 }
 
 .member-role {
-  background-color: white;
-  color: #d90d2e;
+  background-color: var(--color-white);
+  color: var(--color-red-accent);
   text-align: center;
   padding: 0.3rem 0.6rem;
   font-weight: 700;
@@ -322,11 +234,15 @@ nav img {
   align-items: center;
   justify-content: center;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  color: var(--color-navy);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .member-name {
-  background-color: white;
-  color: #1c2645;
+  background-color: var(--color-white);
+  color: var(--color-navy);
   text-align: center;
   padding: 0.5rem 0.3rem;
   border-radius: 6px;
@@ -339,5 +255,58 @@ nav img {
   font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
-  color: #1c2645;
+  color: var(--color-navy);
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  CARTES PARTENAIRES
+═══════════════════════════════════════════════════════════════════════════════════════
+Pour les sections avec partenaires ou sponsors
+*/
+
+.partner-card {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background-color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* 
+═══════════════════════════════════════════════════════════════════════════════════════
+                                  RESPONSIVE DESIGN
+═══════════════════════════════════════════════════════════════════════════════════════
+*/
+
+@media (min-width: 768px) {
+  .membres-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 600px;
+  }
+
+  .membres-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .membres-gallery h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .membres-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
+  }
 }
