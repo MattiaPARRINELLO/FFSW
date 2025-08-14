@@ -4,6 +4,12 @@
 
 ### 📸 **Mise à jour des photos**
 
+- [ ] **Demander les photos originales** ⚠️
+
+  - [ ] Récupérer les fichiers photos originaux non compressés
+  - [ ] Les photos actuelles sont compressées par Figma (perte de qualité)
+  - [ ] Demander les fichiers source en haute résolution
+
 - [ ] **Page Membres** (`pages/membres/index.html`)
 
   - [ ] Remplacer les photos Unsplash par les vraies photos des membres
